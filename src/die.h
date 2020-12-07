@@ -2,7 +2,8 @@
 #include<iostream>
 #include<time.h>
 
-using std::cin; using std::cout;
+#ifndef DIE_H
+#define DIE_H
 
 class Die 
 {
@@ -18,3 +19,5 @@ class Die
         int sides{6};
 
 };
+
+#endif
