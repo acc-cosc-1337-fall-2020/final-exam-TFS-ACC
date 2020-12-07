@@ -2,12 +2,15 @@
 #include "catch.hpp"
 #include "die.h"
 #include "roll.h"
+#include "shooter.h"
 
 // TEST_CASE("Verify Test Configuration", "verification") {
 // 	REQUIRE(true == true);
 // }
 
 TEST_CASE("Testing Die Class:"){
+
+	srand(time(0));
 
 	Die dice;
 
@@ -21,6 +24,8 @@ TEST_CASE("Testing Die Class:"){
 
 TEST_CASE("Testing Roll Class:"){
 
+	srand(time(0));
+
 	Die dice1;
 	Die dice2;
 
@@ -30,6 +35,24 @@ TEST_CASE("Testing Roll Class:"){
 			dicetoss.roll_die();
 		REQUIRE(dicetoss.roll_value() >= 2);
 		REQUIRE(dicetoss.roll_value() <= 12);
+	}
+
+}
+
+TEST_CASE("Testing Shooter Class:"){
+
+	srand(time(0));
+
+	Die dice1;
+	Die dice2;
+
+	Shooter diceroll;
+
+	for(int i = 0; i <= 10; i++){
+			;
+		REQUIRE(diceroll.throw_die(dice1, dice2) != NULL);
+		REQUIRE(diceroll.throw_die(dice1, dice2)->roll_value() >= 2);
+		REQUIRE(diceroll.throw_die(dice1, dice2)->roll_value() <= 12);
 	}
 
 }

@@ -3,7 +3,7 @@
 
 void Die::roll(){
 
-    srand(time(NULL));
+    //srand(time(NULL));
 
     Die::roll_value = rand() % Die::sides + 1;
 
