@@ -18,7 +18,7 @@ std::ostream& operator<< (std::ostream& out , Shooter& shot){
 
     for(auto &roll: shot.rolls)  
 
-        std::cout << roll << "\n";
+        std::cout << roll->roll_value() << "\n";
 
     return out;
 
